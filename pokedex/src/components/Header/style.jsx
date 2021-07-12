@@ -1,9 +1,20 @@
 import styled from "styled-components";
 
-export const Title = styled.h2` 
+
+export const GeneralContainer = styled.div`
     display: flex;
-    flex-direction: column;
     background-color: #41A8D7;
-    color: white;
     align-items: center;
+`
+
+export const Button = styled.div` 
+    position: relative;
+    padding-left: 5px;
+`
+
+export const Title = styled.h2` 
+    color: white;
+    justify-content: center;
+    align-items: center;
+    margin-left: 400px;
 `

@@ -1,14 +1,17 @@
 import React from "react";
-import {Title} from "./style"
+import {Title, Button, GeneralContainer} from "./style"
 
-export const Headers = () => {
+export const Header = () => {
     return (
-      <div >
-        <div> 
-            <Title>Teste</Title>
+      <GeneralContainer >
+        <Button> 
             <button>lalaland</button>
-        </div>       
-      </div>
+        </Button>
+
+        <div>
+          <Title>Teste</Title>
+        </div>      
+      </GeneralContainer>
     );
   }
   
