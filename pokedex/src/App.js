@@ -1,10 +1,12 @@
-import './App.css';
-import { Pokecard } from '../src/components/Pokecard/Pokecard'
+
+import React from "react"
+import {Router} from "../src/route/Router"
+
 
 function App() {
   return (
-    <div className="App">
-      
+    <div >
+      <Router />
     </div>
   );
 }
