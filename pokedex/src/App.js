@@ -1,11 +1,13 @@
 import React from "react"
-import {Router} from "../src/route/Router"
+// import {Router} from "../src/route/Router"
+import {Header} from "../src/components/Header/Header"
 
 
 function App() {
   return (
     <div >
-      <Router />
+      <Header/>
+      {/* <Router /> */}
     </div>
   );
 }
