@@ -2,7 +2,7 @@ import React from "react"
 import { Container, ContainerPokemon } from './style.jsx'
 // import { mockData } from "./mockData.js"
 
-function Details() {
+export const Details = () => {
 
     // const pokeDetail = mockData
 
@@ -51,4 +51,3 @@ function Details() {
         </Container>
     )
 }
-export default Details
