@@ -29,10 +29,8 @@ export const Header = () => {
 
     return (
       <GeneralContainer >
-        {Screen ? goPokedex : goPokemonList}
         <Button> 
             <button onClick = {changeScreen}>{Screen? "Go to Pokedex" : "Back to PokemonList"}</button>
-            
         </Button>
 
         <div>
