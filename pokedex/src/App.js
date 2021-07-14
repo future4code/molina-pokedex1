@@ -1,12 +1,13 @@
 
 import React from "react"
-import {Router} from "../src/route/Router"
+import { Router } from "../src/route/Router"
+import GlobalState from "./global/GlobalState.jsx"
 
 function App() {
   return (
-    <div >
+    <GlobalState>
       <Router />
-    </div>
+    </GlobalState>
   );
 }
 

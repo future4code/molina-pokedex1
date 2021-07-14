@@ -5,7 +5,6 @@ import {useHistory} from "react-router"
 // import { Pokedex } from "../../pages/pokedex/Pokedex";
 
 export const Header = () => {
-
     const history = useHistory()  
     
     const [Screen, setScreen] = useState (false)
