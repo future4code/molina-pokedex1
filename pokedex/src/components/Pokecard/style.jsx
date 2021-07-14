@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
 const MainContainer = styled.div`
+display: flex;
+flex-direction: column;
 width: 300px;
 height: 300px;
 border: 8px solid white;
@@ -20,7 +22,6 @@ background-color: red;
 
     p {
         color: white;
-        /* font-size: 16px; */
         font-weight: bold;
     }
 `
@@ -36,6 +37,7 @@ background-color: #FFCC00;
 border-radius: 15px;
 border: 4px solid white;
 width: 100px;
+margin-left: 14px;
     p {
         color: black;
     }

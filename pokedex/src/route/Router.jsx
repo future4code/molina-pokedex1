@@ -4,7 +4,7 @@ import { PokemonList } from '../pages/pokemonlist/PokemonList'
 import { Pokedex } from '../pages/pokedex/Pokedex'
 import { Details } from '../pages/details/Details'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
 
 export const Router = () => {
