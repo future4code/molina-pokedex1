@@ -31,7 +31,6 @@ export const Header = () => {
      
         <ContainerButton> 
             <Button onClick = {changeScreen}>{Screen? "Go to Pokedex" : "Back to PokemonList"}</Button>
-            <button onClick={()=>history.push("/details")}>apagar esse botão depois</button>        
         </ContainerButton>
           
         <div>
