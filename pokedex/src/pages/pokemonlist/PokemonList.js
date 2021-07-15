@@ -5,19 +5,8 @@ import { GlobalStateContext } from "../../global/GlobalStateContext";
 
 export const PokemonList = () => {
 
-    const { states, setters, requests } = useContext(GlobalStateContext)
-    const { getAllPokemons } = requests
+    const { states } = useContext(GlobalStateContext)
     const { pokemonDetailList } = states
-
-    // useEffect(() => {
-    //     getAllPokemons()
-    // }, [])
-    // function testePromisse () {
-    //     Promise.all([
-    //         getPokemonList(),
-    //         arrayPokemonDetails()
-    //     ])
-    // }
 
     const displayCards = pokemonDetailList && pokemonDetailList.length === 20 ? pokemonDetailList.map((item) => {
         return (
@@ -25,7 +14,6 @@ export const PokemonList = () => {
         )
     }) : <p>carregando</p>
 
-    // setTimeout(() => { console.log("chegou pelo GlobalState", pokemonDetailList) }, 5000)
     return (
         <div>
             <h1>PokemonList Page</h1>
