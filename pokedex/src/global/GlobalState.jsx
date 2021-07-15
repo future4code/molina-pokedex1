@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react"
 import { GlobalStateContext } from "./GlobalStateContext"
 import axios from "axios"
 
+
 const GlobalState = (props) => {
 
     const [pokemonDetailList, setPokemonDetailList] = useState([])
     const [pokeNames, setPokeNames] = useState([])
-
+    const [pokeDexItems, SetPokedexItems] = useState ([])
+    
     useEffect(() => {
         getPokemonList()
     }, [])
@@ -29,16 +31,22 @@ const GlobalState = (props) => {
         }
     }
 
-const states = { pokemonDetailList, pokeNames }
-const setters = { setPokemonDetailList, setPokeNames }
-const requests = { getPokemonList }
+    const addPokedex = (item) => {
+        const pokeDex = [...pokeDexItems,item]
+        SetPokedexItems (pokeDex)
+        console.log(pokeDexItems)
+    }
 
+    const states = { pokemonDetailList, pokeNames, pokeDexItems }
+    const setters = { setPokemonDetailList, setPokeNames, SetPokedexItems }
+    const requests = { getPokemonList }
+    const functions = {addPokedex}
 
-return (
-    <GlobalStateContext.Provider value={{ states, setters, requests }}>
-        {props.children}
-    </GlobalStateContext.Provider>
-)
-}
+    return (
+        <GlobalStateContext.Provider value={{ states, setters, requests, functions }}>
+            {props.children}
+        </GlobalStateContext.Provider>
+    )
+    }
 
 export default GlobalState
