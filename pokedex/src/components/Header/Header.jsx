@@ -7,17 +7,18 @@ import {useHistory} from "react-router"
 export const Header = () => {
     const history = useHistory()  
     
-    const [Screen, setScreen] = useState (false)
+    const [Screen, setScreen] = useState (true)
   
     const goPokedex = () => {
       history.push ("/pokedex")
     }
 
     const changeScreen = (() => {
-      setScreen (!Screen)
       if (Screen === true) {
+        setScreen(!Screen)
         return goPokedex()
       } else {
+        setScreen(!Screen)
         return goPokemonList()
       }
     })

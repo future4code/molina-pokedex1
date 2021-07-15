@@ -8,7 +8,7 @@ export const PokemonList = () => {
     const { states } = useContext(GlobalStateContext)
     const { pokemonDetailList } = states
 
-    const displayCards = pokemonDetailList && pokemonDetailList.length === 20 ? pokemonDetailList.map((item) => {
+    const displayCards = pokemonDetailList && pokemonDetailList.length > 0 ? pokemonDetailList.map((item) => {
         return (  
                 <Pokecard item={item} />
         )
