@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react"
-import axios from "axios"
+import React from "react"
 import { ButtonsContainer, MainContainer, Buttons } from './style'
 
 export const Pokecard = (props) => {
