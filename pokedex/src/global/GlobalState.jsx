@@ -6,7 +6,6 @@ import axios from "axios"
 const GlobalState = (props) => {
 
     const [pokemonDetailList, setPokemonDetailList] = useState([])
-    const [pokeNames, setPokeNames] = useState([])
     const [pokeDexItems, SetPokedexItems] = useState ([])
     
     useEffect(() => {
@@ -31,16 +30,29 @@ const GlobalState = (props) => {
         }
     }
 
-    const addPokedex = (item) => {
-        const pokeDex = [...pokeDexItems,item]
-        SetPokedexItems (pokeDex)
-        console.log(pokeDexItems)
+    const addPokedex = (pokemon) => {
+        
+        const pokeDex = [...pokeDexItems, pokemon]
+        SetPokedexItems(pokeDex)
+        
+        const pokedexRemove = pokemonDetailList.filter((item) => {
+            return pokemon !== item 
+        })
+        setPokemonDetailList(pokedexRemove)
+        
     }
 
-    const states = { pokemonDetailList, pokeNames, pokeDexItems }
-    const setters = { setPokemonDetailList, setPokeNames, SetPokedexItems }
+    const removePokedex = (pokemon) => {
+        const pokedex = pokeDexItems.filter((item) => {
+            return pokemon !== item 
+        })
+        SetPokedexItems(pokedex)
+    }
+
+    const states = { pokemonDetailList, pokeDexItems }
+    const setters = { setPokemonDetailList, SetPokedexItems }
     const requests = { getPokemonList }
-    const functions = {addPokedex}
+    const functions = {addPokedex, removePokedex}
 
     return (
         <GlobalStateContext.Provider value={{ states, setters, requests, functions }}>
