@@ -23,6 +23,9 @@ background-color: red;
     p {
         color: white;
         font-weight: bold;
+        ::first-letter{
+            text-transform: capitalize;
+        }
     }
 `
 
@@ -45,4 +48,5 @@ margin-left: 14px;
 export { 
     ButtonsContainer,
     MainContainer,
-    Buttons }
+    Buttons
+}

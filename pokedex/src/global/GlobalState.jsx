@@ -24,7 +24,7 @@ const GlobalState = (props) => {
                 .then((res)=>{
                     setPokemonDetailList((receivedInfo => [...receivedInfo, res.data]))
                 })
-                .catch((err)=>{alert(err)})
+                .catch((err)=>{alert(err)}) 
             }
         }
     }

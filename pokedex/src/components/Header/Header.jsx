@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Title, Button, GeneralContainer} from "./style"
+import {Title, ContainerButton, GeneralContainer, Button} from "./style"
 import {useHistory} from "react-router"
 // import { PokemonList } from "../../pages/pokemonlist/PokemonList";
 // import { Pokedex } from "../../pages/pokedex/Pokedex";
@@ -28,9 +28,9 @@ export const Header = () => {
 
     return (
       <GeneralContainer >
-        <Button> 
-            <button onClick = {changeScreen}>{Screen? "Go to Pokedex" : "Back to PokemonList"}</button>
-        </Button>
+        <ContainerButton> 
+            <Button onClick = {changeScreen}>{Screen? "Go to Pokedex" : "Back to PokemonList"}</Button>
+        </ContainerButton>
 
         <div>
           <Title>Teste</Title>
