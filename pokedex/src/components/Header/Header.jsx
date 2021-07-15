@@ -27,11 +27,13 @@ export const Header = () => {
     }
 
     return (
-      <GeneralContainer >
+      <GeneralContainer>
+     
         <ContainerButton> 
             <Button onClick = {changeScreen}>{Screen? "Go to Pokedex" : "Back to PokemonList"}</Button>
+            <button onClick={()=>history.push("/details")}>apagar esse botão depois</button>        
         </ContainerButton>
-
+          
         <div>
           <Title>Teste</Title>
         </div>      

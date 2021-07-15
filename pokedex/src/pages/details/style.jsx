@@ -18,28 +18,44 @@ export const ContainerPokemon = styled.div`
 
     #name{
         font-size: 3em;
+        font-weight: 600;
+        ::first-letter{
+            text-transform: capitalize;
+        }
     }
 
     #container-type{
         display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 2%;
+        width: 100%;
         #type{
-            padding: 0.4%;
-            font-size: 1.4em;
             border: 1px solid lightgray;
             border-radius: 10px;
+            padding: 1%;
+            p{
+                font-size: 1.2em;
+                margin: 0%;
+                padding: 0%;
+            }
         }
     }
 
     #image{
-        background-image: url("https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/12.png");
+        background-image: url(${(props) => props.img});
         background-repeat: no-repeat;
-        background-size: cover;
-        background-color: blanchedalmond;
+        background-size: 90%;
+        background-position: center;
         border: 1px solid lightgray;
-        width: 100px;
-        height: 100px;
+        width: 16vw;
+        padding-bottom: 16vw;
+        @media (max-device-width: 414px){
+            width: 28vh;
+            padding-bottom: 28vh;
+        }
     }
+    
 
     #container-specs-atacks{
         display: flex;

@@ -1,30 +1,25 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Container, ContainerPokemon } from './style.jsx'
-// import { mockData } from "./mockData.js"
+import { GlobalStateContext } from "../../global/GlobalStateContext"
 
 export const Details = () => {
 
-    // const pokeDetail = mockData
+    const { states } = useContext(GlobalStateContext)
+    const { pokemonDetailList } = states
+    const { name , types, sprites } = pokemonDetailList[0]
 
-    // const selectedSpec = pokeDetail.map((item)=>{
-    //     return (
-    //         <ContainerPokemon>
-    //             <div id={"name"}></div>
-    //             <div id={"type"}></div>
-    //         </ContainerPokemon>
-    //     )
-    // })
+    const displayTypes = types && types.map((item)=>{
+        return <div id={"type"}><p>{item.type.name}</p></div>
+    })
 
     return (
         <Container>
-            <ContainerPokemon>
-                <div id={"name"}>butterfree</div>
+            <ContainerPokemon img={sprites.other.dream_world.front_default}>
+                <div id={"name"}>{name}</div>
                 <div id={"container-type"}>
-                    <div id={"type"}>Grass</div>
-                    <div id={"type"}>Grass</div>
-                    <div id={"type"}>Grass</div>
+                    {displayTypes}
                 </div>
-                <div id={"image"}></div>
+                <div id={"image"}/>
                 <div id={"container-specs-atacks"}>
                     <div id={"specs"}>
                         <h3>
