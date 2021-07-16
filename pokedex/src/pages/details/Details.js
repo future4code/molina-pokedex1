@@ -1,9 +1,12 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { Container, ContainerPokemon } from './style.jsx'
 import { GlobalStateContext } from "../../global/GlobalStateContext"
 import axios from "axios"
 
 export const Details = () => {
+    useEffect(()=>{
+        getSpecies(species.url)
+    },[0])
 
     const { states } = useContext(GlobalStateContext)
     const { pokemonDetailList } = states
@@ -55,9 +58,7 @@ export const Details = () => {
                         <h3>Características</h3>
                         <p>Altura: {(Number(height)*0.1).toFixed(2)}m</p>
                         <p>Peso: {(Number(weight)*0.1).toFixed(2)}kg</p>
-                        <p>Espécie: {getSpecies(species.url)}</p>
-                        <p>bla bla bla</p>
-                        <p>bla bla bla</p>
+                        <p>Espécie: {specie}</p>
                     </div>
                     <div id={"atacks"}>
                         <h3>Principais Ataques</h3>

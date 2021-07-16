@@ -18,23 +18,25 @@ export const Container = styled.div`
     }
 `
 export const ContainerPokemon = styled.div`
+    border: 1px solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap:2%;
     width: 80%;
     height: 100%;
 
 
     #container-type{
-        border: 1px solid black;/*------------------------apagar*/
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
         gap: 1vh;
         width: 100%;
+        margin-top: 2%;
+
         #type{
             display: flex;
             align-items: center;
@@ -44,6 +46,7 @@ export const ContainerPokemon = styled.div`
             text-align: center;
             border-radius: 10px;
             padding: 1%;
+
             p{
                 font-size: 1.2em;
                 font-weight: 900;
