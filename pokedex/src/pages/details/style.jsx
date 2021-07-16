@@ -41,7 +41,7 @@ export const ContainerPokemon = styled.div`
             display: flex;
             align-items: center;
             justify-content: center;            
-            width: 4em;
+            width: 6em;
             height: 1.2em;
             text-align: center;
             border-radius: 10px;
