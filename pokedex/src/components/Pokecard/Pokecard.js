@@ -19,7 +19,7 @@ export const Pokecard = (props) => {
     return (
         <MainContainer>
             <p>{props.item.name}</p>
-            <img src={props.item.sprites.front_shiny}></img>
+            <img src={props.item.sprites.other.dream_world.front_default}></img>
             <ButtonsContainer>
                 {location.pathname === "/pokedex" ? 
                 <Buttons onClick ={() => removePokedex(props.item)}><p> Remover </p></Buttons> : 
