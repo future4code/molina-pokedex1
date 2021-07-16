@@ -8,11 +8,9 @@ export const PokemonList = () => {
     const { states } = useContext(GlobalStateContext)
     const { pokemonDetailList } = states
 
-    const displayCards = pokemonDetailList && pokemonDetailList.length > 0 ? pokemonDetailList.sort((a, b) => {
-        return a.id > b.id
-    }).map((item) => {
+    const displayCards = pokemonDetailList && pokemonDetailList.length > 0 ? pokemonDetailList.map((item) => {
         return (
-            <Pokecard item={item} />
+            <Pokecard key={item.id} item={item} />
         )
     }) : <p>carregando</p>
 
