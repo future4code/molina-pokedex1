@@ -47,6 +47,9 @@ const GlobalState = (props) => {
             return pokemon !== item 
         })
         SetPokedexItems(pokedex)
+
+        const returnPokelist = [...pokemonDetailList, pokemon]
+        setPokemonDetailList(returnPokelist)
     }
 
     const states = { pokemonDetailList, pokeDexItems }
