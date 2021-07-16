@@ -2,11 +2,21 @@ import React, { useContext, useEffect, useState } from "react"
 import { Container, ContainerPokemon } from './style.jsx'
 import { GlobalStateContext } from "../../global/GlobalStateContext"
 import axios from "axios"
+import { useParams } from "react-router"
 
 export const Details = () => {
-    useEffect(()=>{
+    useEffect(() => {
         getSpecies(species.url)
-    },[0])
+    }, [])
+
+    const search = (pokeName, pokemonDetailList) => {
+        for (var i = 0; i < pokemonDetailList.length; i++) {
+            if (pokemonDetailList[i].name === pokeName) { return i }
+        }
+    }
+   
+    const { pokeName } = useParams()
+    const [specie, setSpecie] = useState("")
 
     const { states } = useContext(GlobalStateContext)
     const { pokemonDetailList } = states
@@ -18,19 +28,17 @@ export const Details = () => {
         weight,
         species,
 
-    } = pokemonDetailList[0]
-
-    const [specie, setSpecie] = useState("")
+    } = pokemonDetailList[search(pokeName, pokemonDetailList)]
 
     const getSpecies = (url) => {
         axios.get(url)
-        .then((res)=>{
-            setSpecie(String(res.data.genera[7].genus).split(" Pokémon"))
-        })
-        .catch((er)=>{
-            alert(er)
-        })
-        
+            .then((res) => {
+                setSpecie(String(res.data.genera[7].genus).split(" Pokémon"))
+            })
+            .catch((er) => {
+                alert(er)
+            })
+
         return specie
     }
 
@@ -40,7 +48,7 @@ export const Details = () => {
 
     return (
         <Container>
-                <div id={"name"}>{name}</div>
+            <div id={"name"}>{name}</div>
 
             <ContainerPokemon img={sprites.other.dream_world.front_default}>
 
@@ -48,7 +56,7 @@ export const Details = () => {
                     <div id={"pokeball"}>
                         <div className={"circle1"} />
                         <div className={"circle2"} />
-                        <img src={sprites.other.dream_world.front_default}/>
+                        <img src={sprites.other.dream_world.front_default} />
                     </div>
                     <div id={"container-type"}>{displayTypes}</div>
                 </div>
@@ -56,8 +64,8 @@ export const Details = () => {
                 <div id={"container-specs-atacks"}>
                     <div id={"specs"}>
                         <h3>Características</h3>
-                        <p>Altura: {(Number(height)*0.1).toFixed(2)}m</p>
-                        <p>Peso: {(Number(weight)*0.1).toFixed(2)}kg</p>
+                        <p>Altura: {(Number(height) * 0.1).toFixed(2)}m</p>
+                        <p>Peso: {(Number(weight) * 0.1).toFixed(2)}kg</p>
                         <p>Espécie: {specie}</p>
                     </div>
                     <div id={"atacks"}>

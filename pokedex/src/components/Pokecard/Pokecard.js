@@ -24,7 +24,7 @@ export const Pokecard = (props) => {
                 {location.pathname === "/pokedex" ? 
                 <Buttons onClick ={() => removePokedex(props.item)}><p> Remover </p></Buttons> : 
                 <Buttons onClick ={() => addPokedex(props.item)}><p>Adicionar</p></Buttons>}
-                <Buttons onClick={()=> history.push("/details")}><p>Ver detalhes</p></Buttons>
+                <Buttons onClick={()=> history.push(`/details/${props.item.name}`)}><p>Ver detalhes</p></Buttons>
             </ButtonsContainer>
         </MainContainer>
     )
