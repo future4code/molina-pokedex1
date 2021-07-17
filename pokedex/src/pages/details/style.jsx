@@ -6,7 +6,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: start;
     width: 100%;
-    height: 100vmin;
+    height: 100%;
     background-color: #3267B2;
     
     #name{
@@ -25,7 +25,7 @@ export const ContainerPokemon = styled.div`
     justify-content: center;
     gap:2%;
     width: 80%;
-    height: 100%;
+    height: 50%;
 
 
     #container-type{
@@ -126,7 +126,7 @@ export const ContainerPokemon = styled.div`
         -webkit-filter: drop-shadow(2px 0 0.5em #265392);
         overflow: visible;
 
-        .circle1{
+        .circle{
             position: absolute;
             z-index: 0;
             top:30%;
@@ -135,18 +135,6 @@ export const ContainerPokemon = styled.div`
             height: 32%;
             background: white;
             border:0.8em solid black;
-            border-radius: 50%;
-        }
-
-        .circle2{
-            position: absolute;
-            z-index: 0;
-            top:36%;
-            left: 36%;
-            width: 28%;
-            height: 28%;
-            background: white;
-            border:0.1em solid black;
             border-radius: 50%;
         }
 
@@ -172,24 +160,68 @@ export const ContainerPokemon = styled.div`
             }
         }
     }
+`
 
-    #container-specs-atacks{
+export const ContainerSpecs = styled.div`
         display: flex;
         align-items: center;
         justify-content: start;
         width: 100%;
-        gap:2%
-    }
-
-    #specs{
-        width: 25%;
         height: 100%;
+        gap:2%;
         background-color: lightgray;
-    }
+`
 
-    #atacks{
-        width: 25%;
-        height: 100%;
-        background-color: lightgray;     
+export const ContainerStats = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    min-width: 20vw;
+    height: 100%;
+    background-color: lightgray;
+    h3{
+        text-align: center;
+        margin: 0;
     }
+`
+
+export const Skill = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 3vh;    
+    background-color: lightgrey ;
+    #skill-title{
+        font-size: small;
+        font-variant: small-caps;
+        margin: 0;
+        margin-right: 1%;
+        padding: 0;
+    }
+`
+
+export const LevelBar = styled.div`
+        width: 50%;
+        height: 100%;
+        margin-right: 1%;
+        background-color: white;
+        border: 1px solid black;
+        .level{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            width: ${(props) => `${props.level/2.55}%`};
+            height: 100%;
+            background-color: limegreen;
+            p{
+                font-size: small;
+                margin: 0;
+                margin-left: 1%;
+                color: blue;
+            }
+        }
 `
