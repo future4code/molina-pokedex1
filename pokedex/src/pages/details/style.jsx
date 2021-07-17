@@ -6,6 +6,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: start;
     width: 100%;
+    padding-top: 1%;
     background-color: darkred;
 `
 export const ContainerRow = styled.div`
@@ -47,6 +48,7 @@ export const PokeType = styled.div`
             height: 1.2em;
             text-align: center;
             border-radius: 10px;
+            border: 1px solid #00000032;
             padding: 1%;
             
             p{

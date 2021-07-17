@@ -1,15 +1,16 @@
 import React, { useContext, useEffect, useState } from "react"
 import { Container, PokedexDeviceScreenBorder, PokedexDeviceScreenTopBorder, PokedexDeviceScreenBottonBorder, PokedexDeviceScreen, ContainerRow, ContainerColumn, PokemonName, PokemonImage, PokeType, ContainerSpecs, ContainerStats, Skill, LevelBar } from './style.jsx'
+import { Button } from '../../components/Header/style'
 import { GlobalStateContext } from "../../global/GlobalStateContext"
 import axios from "axios"
-import { useParams } from "react-router"
+import { useHistory, useParams } from "react-router"
 
 export const Details = () => {
     useEffect(() => {
         getSpecies(species.url)
     }, [])
 
-
+    const history = useHistory()
     const { pokeName } = useParams()
     const [specie, setSpecie] = useState("")
 
@@ -63,6 +64,10 @@ export const Details = () => {
 
     return (
         <Container>
+            <Button
+                onClick={() => history.goBack()}>
+                voltar
+            </Button>
             <PokedexDeviceScreenBorder>
                 <PokedexDeviceScreenTopBorder>
                     <div /><div />
@@ -172,6 +177,7 @@ export const Details = () => {
                     </div>
                 </PokedexDeviceScreenBottonBorder>
             </PokedexDeviceScreenBorder>
+
         </Container>
     )
 }
