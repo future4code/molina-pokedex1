@@ -6,29 +6,31 @@ export const Container = styled.div`
     align-items: center;
     justify-content: start;
     width: 100%;
+    margin-top: 2%;
+`
+export const ContainerRow = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     height: 100%;
-    background-color: #3267B2;
-    
-    #name{
+`
+export const ContainerColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+`
+export const PokemonName = styled.div`
         font-size: 3em;
         font-weight: 600;
+        margin: 2vh 0;
         ::first-letter{
             text-transform: capitalize;
         }
-    }
-`
-export const ContainerPokemon = styled.div`
-    border: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap:2%;
-    width: 80%;
-    height: 50%;
-
-
-    #container-type{
+`   
+export const PokeType = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
@@ -36,7 +38,7 @@ export const ContainerPokemon = styled.div`
         gap: 1vh;
         width: 100%;
         margin-top: 2%;
-
+        
         #type{
             display: flex;
             align-items: center;
@@ -46,7 +48,7 @@ export const ContainerPokemon = styled.div`
             text-align: center;
             border-radius: 10px;
             padding: 1%;
-
+            
             p{
                 font-size: 1.2em;
                 font-weight: 900;
@@ -98,7 +100,7 @@ export const ContainerPokemon = styled.div`
         }
         .poison{
             background-color:#b97fc9;
-        
+            
         }
         .psychic{
             background-color:#f366b9;
@@ -112,8 +114,8 @@ export const ContainerPokemon = styled.div`
         .water{
             background-color:#4592c4;
         }
-    }
-
+`
+export const PokemonImage = styled.div`
     #pokeball{
         position: relative;
         width: 20vw;
@@ -123,9 +125,9 @@ export const ContainerPokemon = styled.div`
         background: linear-gradient(0.45turn, red 0 47%, black 48% 53%, white 54% 100%);
         background-repeat: no-repeat;
         filter: drop-shadow(2px 0 0.5em blue);
-        -webkit-filter: drop-shadow(2px 0 0.5em #265392);
+        -webkit-filter: drop-shadow(2px 0 0.5em black);
         overflow: visible;
-
+        
         .circle{
             position: absolute;
             z-index: 0;
@@ -137,7 +139,7 @@ export const ContainerPokemon = styled.div`
             border:0.8em solid black;
             border-radius: 50%;
         }
-
+        
         img{
             position: absolute;
             z-index: 2;
@@ -147,7 +149,7 @@ export const ContainerPokemon = styled.div`
             filter: drop-shadow( 5px 5px 3px rgba(0, 0, 0, .3));
         }
     }
-
+    
     @media (max-device-width: 414px){
         #pokeball{
             width: 50vw;
@@ -161,39 +163,61 @@ export const ContainerPokemon = styled.div`
         }
     }
 `
-
 export const ContainerSpecs = styled.div`
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: start;
-        width: 100%;
+        width: 20vw;
         height: 100%;
-        gap:2%;
-        background-color: lightgray;
-`
+        *{
+            margin: 0;
+        }
+        h3{
+            width: 100%;
+            font-variant: small-caps;
+            text-align: center;
+            margin: 0;
+            margin-top: 1%;
+        }
+        p{
+            font-size: small;
+            font-variant: small-caps;
+            margin: 0;
+            margin-right: 1%;
+            padding: 0;
+        }
+        span{
+            font-size: x-small;
+            font-variant: normal;
 
+        }
+`
 export const ContainerStats = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2%;
-    min-width: 20vw;
+    width: 20vw;
     height: 100%;
-    background-color: lightgray;
+    margin-top: 1vh;
+    
     h3{
+        font-size: medium;
+        font-variant: small-caps;
         text-align: center;
         margin: 0;
+        padding-top: 1vh;
+        border-top: 1px solid lightgrey;
     }
 `
-
 export const Skill = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
     width: 100%;
-    height: 3vh;    
-    background-color: lightgrey ;
+    height: 2.8vh;
+    margin-top: 1vh;
     #skill-title{
         font-size: small;
         font-variant: small-caps;
@@ -202,7 +226,6 @@ export const Skill = styled.div`
         padding: 0;
     }
 `
-
 export const LevelBar = styled.div`
         width: 50%;
         height: 100%;
