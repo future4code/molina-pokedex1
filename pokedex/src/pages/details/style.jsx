@@ -216,7 +216,6 @@ export const ContainerStats = styled.div`
     margin-top: 1vh;
 
     h3{
-        font-size: medium;
         font-variant: small-caps;
         text-align: center;
         margin: 0;
