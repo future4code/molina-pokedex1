@@ -6,13 +6,14 @@ import axios from "axios"
 import { useHistory, useParams } from "react-router"
 
 export const Details = () => {
-    useEffect(() => {
-        getSpecies(species.url)
-    }, [])
 
     const history = useHistory()
     const { pokeName } = useParams()
     const [specie, setSpecie] = useState("")
+
+    useEffect(() => {
+        getSpecies(species.url)
+    }, [pokeName])
 
     const { states } = useContext(GlobalStateContext)
     const { pokemonDetailList, pokeDexItems } = states
@@ -104,62 +105,62 @@ export const Details = () => {
 
                             <ContainerStats>
                                 <h3>Estatísticas</h3>
+                                <div id={"container-skill-and-bar"}>
+                                    <Skill>
+                                        <p id={"skill-title"}>Força</p>
+                                        <LevelBar level={statsHp}>
+                                            <div className={"level"}>
+                                                <p>{statsHp}</p>
+                                            </div>
+                                        </LevelBar>
+                                    </Skill>
 
-                                <Skill>
-                                    <p id={"skill-title"}>Força</p>
-                                    <LevelBar level={statsHp}>
-                                        <div className={"level"}>
-                                            <p>{statsHp}</p>
-                                        </div>
-                                    </LevelBar>
-                                </Skill>
+                                    <Skill>
+                                        <p id={"skill-title"}>Ataque</p>
+                                        <LevelBar level={statsAttack}>
+                                            <div className={"level"}>
+                                                <p>{statsAttack}</p>
+                                            </div>
+                                        </LevelBar>
+                                    </Skill>
 
-                                <Skill>
-                                    <p id={"skill-title"}>Ataque</p>
-                                    <LevelBar level={statsAttack}>
-                                        <div className={"level"}>
-                                            <p>{statsAttack}</p>
-                                        </div>
-                                    </LevelBar>
-                                </Skill>
+                                    <Skill>
+                                        <p id={"skill-title"}>Defesa</p>
+                                        <LevelBar level={statsDefense}>
+                                            <div className={"level"}>
+                                                <p>{statsDefense}</p>
+                                            </div>
+                                        </LevelBar>
+                                    </Skill>
 
-                                <Skill>
-                                    <p id={"skill-title"}>Defesa</p>
-                                    <LevelBar level={statsDefense}>
-                                        <div className={"level"}>
-                                            <p>{statsDefense}</p>
-                                        </div>
-                                    </LevelBar>
-                                </Skill>
-
-                                <Skill>
-                                    <p id={"skill-title"}>Ataque Especial</p>
-                                    <LevelBar level={statsSpecialAttack}>
-                                        <div className={"level"}>
-                                            <p>{statsSpecialAttack}</p>
-                                        </div>
-                                    </LevelBar>
-                                </Skill>
+                                    <Skill>
+                                        <p id={"skill-title"}>Ataque Especial</p>
+                                        <LevelBar level={statsSpecialAttack}>
+                                            <div className={"level"}>
+                                                <p>{statsSpecialAttack}</p>
+                                            </div>
+                                        </LevelBar>
+                                    </Skill>
 
 
-                                <Skill>
-                                    <p id={"skill-title"}>Defesa Especial</p>
-                                    <LevelBar level={statsSpecialDefense}>
-                                        <div className={"level"}>
-                                            <p>{statsSpecialDefense}</p>
-                                        </div>
-                                    </LevelBar>
-                                </Skill>
+                                    <Skill>
+                                        <p id={"skill-title"}>Defesa Especial</p>
+                                        <LevelBar level={statsSpecialDefense}>
+                                            <div className={"level"}>
+                                                <p>{statsSpecialDefense}</p>
+                                            </div>
+                                        </LevelBar>
+                                    </Skill>
 
-                                <Skill>
-                                    <p id={"skill-title"}>Velocidade</p>
-                                    <LevelBar level={statsSpeed}>
-                                        <div className={"level"}>
-                                            <p>{statsSpeed}</p>
-                                        </div>
-                                    </LevelBar>
-                                </Skill>
-
+                                    <Skill>
+                                        <p id={"skill-title"}>Velocidade</p>
+                                        <LevelBar level={statsSpeed}>
+                                            <div className={"level"}>
+                                                <p>{statsSpeed}</p>
+                                            </div>
+                                        </LevelBar>
+                                    </Skill>
+                                </div>
                             </ContainerStats>
 
                         </ContainerColumn>
