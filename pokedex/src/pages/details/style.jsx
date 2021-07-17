@@ -6,7 +6,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: start;
     width: 100%;
-    margin-top: 2%;
+    background-color: darkred;
 `
 export const ContainerRow = styled.div`
     display: flex;
@@ -177,20 +177,22 @@ export const ContainerSpecs = styled.div`
             width: 100%;
             font-variant: small-caps;
             text-align: center;
-            margin: 0;
-            margin-top: 1%;
         }
         p{
             font-size: small;
             font-variant: small-caps;
             margin: 0;
-            margin-right: 1%;
             padding: 0;
         }
         span{
             font-size: x-small;
             font-variant: normal;
 
+        }
+        hr{
+            width: 2vw;
+            margin: 1vh 0;
+            border: 1px solid lightgray
         }
 `
 export const ContainerStats = styled.div`
@@ -207,8 +209,6 @@ export const ContainerStats = styled.div`
         font-variant: small-caps;
         text-align: center;
         margin: 0;
-        padding-top: 1vh;
-        border-top: 1px solid lightgrey;
     }
 `
 export const Skill = styled.div`
@@ -247,4 +247,65 @@ export const LevelBar = styled.div`
                 color: blue;
             }
         }
+`
+export const PokedexDeviceScreen = styled.div`
+    width: 44vw;
+    padding: 1%;
+    text-align: center;
+    background-color: #68af68a0;
+    box-shadow: -1px -2px 2px black;
+`
+export const PokedexDeviceScreenBorder = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin:1%;
+    padding: 0 5%;
+    border: 10px;
+    border-radius: 10px;
+    border-bottom-left-radius: 80px 80px;
+    border-style: outset;
+    background-color: lightgray;
+    /* clip-path: stroke-box polygon(0 0, 100% 0, 100% 100%, 14% 100%, 0 86%); */
+`
+export const PokedexDeviceScreenTopBorder = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    width: 100%;
+    margin: 2% 0;
+    div{
+        width: 2vw;
+        padding-bottom: 2vw;
+        border-radius: 50%;
+        background-color: red;
+        box-shadow: inset 8px 4px 5px darkred;
+        border-style: inset ;
+
+    }
+`
+export const PokedexDeviceScreenBottonBorder = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+    width: 100%;
+    margin: 2% 0;
+    #led{
+        width: 2.8vw;
+        padding-bottom: 2.8vw;
+        border-radius: 50%;
+        background-color: red;
+        box-shadow: inset 8px 4px 5px darkred;
+        border-style: inset ;
+
+    }
+    hr{
+        width: 8vw;
+        border: 3px solid gray;
+        border-style: inset ;
+    }
 `
