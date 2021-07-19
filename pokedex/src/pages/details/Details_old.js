@@ -33,7 +33,6 @@ export const Details = () => {
         weight,
         species,
         abilities,
-        moves,
         stats,
     } = allPokemons[search(pokeName)]
 
@@ -53,9 +52,9 @@ export const Details = () => {
         return <div id={"type"} className={item.type.name}><p>{item.type.name}</p></div>
     })
 
-    const displayMoves = moves && moves.map((item, index) => {
-        return <p>{item.move.name}</p>
-    }).filter((item, index) => { return index < 6 })
+    const displayAbilities = abilities && abilities.map((item) => {
+        return <p>{item.ability.name}</p>
+    })
 
     const statsHp = stats[0].base_stat
     const statsAttack = stats[1].base_stat
@@ -66,28 +65,43 @@ export const Details = () => {
 
     return (
         <Container>
+            <Button
+                onClick={() => history.goBack()}>
+                voltar
+            </Button>
             <PokedexDeviceScreenBorder>
                 <PokedexDeviceScreenTopBorder>
                     <div /><div />
                 </PokedexDeviceScreenTopBorder>
                 <PokedexDeviceScreen>
+                    <PokemonName>
+                        {name} #{order}
+                    </PokemonName>
 
                     <ContainerRow>
 
                         <PokemonImage>
                             <div id={"pokeball"}>
                                 <div className={"circle"} />
-                                <img id="front-image"
+                                <img
                                     alt={name}
-                                    src={sprites.front_default} />
-                                <img id="back-image"
-                                    alt={name}
-                                    src={sprites.back_default} />
+                                    src={sprites.other.dream_world.front_default} />
                             </div>
-
+                            <PokeType>{displayTypes}</PokeType>
                         </PokemonImage>
 
                         <ContainerColumn>
+
+                            <ContainerSpecs>
+                                <h3>Habilidades</h3>
+                                {displayAbilities}
+                                <hr />
+                                <h3>Características</h3>
+                                <p>Espécie: {specie}</p>
+                                <p>Altura: {(Number(height) * 0.1).toFixed(2)}<span>m</span></p>
+                                <p>Peso: {(Number(weight) * 0.1).toFixed(2)}<span>kg</span></p>
+                                <hr />
+                            </ContainerSpecs>
 
                             <ContainerStats>
                                 <h3>Estatísticas</h3>
@@ -149,13 +163,6 @@ export const Details = () => {
                                 </div>
                             </ContainerStats>
 
-                        </ContainerColumn>
-                        <ContainerColumn>
-                            <PokeType>{displayTypes}</PokeType>
-                            <ContainerSpecs>
-                                <h3>Principais Ataques</h3>
-                                {displayMoves}
-                            </ContainerSpecs>
                         </ContainerColumn>
 
                     </ContainerRow>
