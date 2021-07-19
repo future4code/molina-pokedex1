@@ -66,6 +66,9 @@ export const Details = () => {
 
     return (
         <Container>
+            
+            <Button onClick={()=>history.push(`/details/more/${pokeName}`)}>mais detalhes</Button>
+
             <PokedexDeviceScreenBorder>
                 <PokedexDeviceScreenTopBorder>
                     <div /><div />
@@ -150,8 +153,14 @@ export const Details = () => {
                             </ContainerStats>
 
                         </ContainerColumn>
+
                         <ContainerColumn>
-                            <PokeType>{displayTypes}</PokeType>
+                            <PokeType>
+                                <h3>Tipo</h3>
+                                <div id={"container-type"}>
+                                    {displayTypes}
+                                </div>
+                            </PokeType>
                             <ContainerSpecs>
                                 <h3>Principais Ataques</h3>
                                 {displayMoves}

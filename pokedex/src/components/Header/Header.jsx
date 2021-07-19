@@ -12,7 +12,7 @@ export const Header = () => {
   const displayPokeName = location.pathname.includes("detail") && location.pathname.split("/details/")[1]
   const { states, functions } = useContext(GlobalStateContext)
   const { pokeDexItems, pokemonDetailList } = states
-  const { addPokedex, removePokedex } = functions
+  const { addPokedex, removePokedex, getPokemonList } = functions
   const [Screen, setScreen] = useState(true)
   const allPokemons = pokemonDetailList.concat(pokeDexItems)
 
@@ -38,10 +38,10 @@ export const Header = () => {
 
   let pokemonAddOrRemove = search(displayPokeName)
 
-  useEffect(() => {
-    search(displayPokeName)
-    itemAddOrRemove(displayPokeName)
-  }, [])
+  // useEffect(() => {
+  //   search(displayPokeName)
+  //   itemAddOrRemove(displayPokeName)
+  // }, [])
 
   const goPokedex = () => {
     history.push("/pokedex")
@@ -61,7 +61,7 @@ export const Header = () => {
     history.push("/")
   }
   console.log(pokemonItem)
-  return location.pathname.includes("detail") ?
+  return location.pathname.includes("detail") && !location.pathname.includes("more")?
     <GeneralContainer>
       <Button onClick={() => history.goBack()}> voltar </Button>
       <PokemonName>{displayPokeName}</PokemonName>

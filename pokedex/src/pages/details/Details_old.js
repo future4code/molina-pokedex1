@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react"
-import { Container, PokedexDeviceScreenBorder, PokedexDeviceScreenTopBorder, PokedexDeviceScreenBottonBorder, PokedexDeviceScreen, ContainerRow, ContainerColumn, PokemonName, PokemonImage, PokeType, ContainerSpecs, ContainerStats, Skill, LevelBar } from './style.jsx'
+import { Container, PokedexDeviceScreenBorder, PokedexDeviceScreenTopBorder, PokedexDeviceScreenBottonBorder, PokedexDeviceScreen, ContainerRow, ContainerColumn, PokemonName, PokemonImage, PokeType, ContainerSpecs, ContainerStats, Skill, LevelBar } from './style_old.jsx'
 import { Button } from '../../components/Header/style'
 import { GlobalStateContext } from "../../global/GlobalStateContext"
 import axios from "axios"
 import { useHistory, useParams } from "react-router"
 
-export const Details = () => {
+export const DetailsOld = () => {
 
     const history = useHistory()
     const { pokeName } = useParams()
