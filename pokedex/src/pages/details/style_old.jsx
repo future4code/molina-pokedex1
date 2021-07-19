@@ -149,21 +149,12 @@ export const PokemonImage = styled.div`
             border-radius: 50%;
         }
         
-        #front-image{
+        img{
             position: absolute;
             z-index: 2;
-            width: 10vw;
-            height: 10vw;
+            width: 20vw;
+            height: 20vw;
             left: 0;
-            filter: drop-shadow( 5px 5px 3px rgba(0, 0, 0, .3));
-        }
-        #back-image{
-            position: absolute;
-            z-index: 3;
-            width: 10vw;
-            height: 10vw;
-            left: 40%;
-            top:50%;
             filter: drop-shadow( 5px 5px 3px rgba(0, 0, 0, .3));
         }
     }
@@ -171,15 +162,11 @@ export const PokemonImage = styled.div`
         #pokeball{
             width: 50vw;
             padding-bottom: 50vw;
-            #front-image{
+            img{
                 top:0;
                 left: 0%; 
-                width: 30vw;
-                height: 30vw;
-            }
-            #back-image{ 
-                width: 30vw;
-                height: 30vw;
+                width: 50vw;
+                height: 50vw;
             }
         }
     }
@@ -276,16 +263,15 @@ export const LevelBar = styled.div`
             height: 100%;
             background-color: limegreen;
             p{
-                width: 96%;
-                text-align: right;
                 font-size: small;
                 margin: 0;
+                margin-left: 1%;
                 color: blue;
             }
         }
 `
 export const PokedexDeviceScreen = styled.div`
-    width: 100%;
+    width: 44vw;
     padding: 1%;
     text-align: center;
     background-color: #68af68a0;
