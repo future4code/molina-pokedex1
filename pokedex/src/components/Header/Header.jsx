@@ -29,9 +29,9 @@ export const Header = () => {
     for (let item of pokeDexItems) {
       if (item.name === pokemon) {
         result = true
-      } else {
+      } /*else {
         result = false
-      }
+      }*/
     }
     return result
   }
