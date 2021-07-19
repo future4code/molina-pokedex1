@@ -66,8 +66,8 @@ export const Details = () => {
 
     return (
         <Container>
-            
-            <Button onClick={()=>history.push(`/details/more/${pokeName}`)}>mais detalhes</Button>
+
+            <Button onClick={() => history.push(`/details/more/${pokeName}`)}>mais detalhes</Button>
 
             <PokedexDeviceScreenBorder>
                 <PokedexDeviceScreenTopBorder>
@@ -87,7 +87,6 @@ export const Details = () => {
                                     alt={name}
                                     src={sprites.back_default} />
                             </div>
-
                         </PokemonImage>
 
                         <ContainerColumn>

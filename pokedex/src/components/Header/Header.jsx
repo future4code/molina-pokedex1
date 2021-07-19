@@ -38,11 +38,6 @@ export const Header = () => {
 
   let pokemonAddOrRemove = search(displayPokeName)
 
-  // useEffect(() => {
-  //   search(displayPokeName)
-  //   itemAddOrRemove(displayPokeName)
-  // }, [])
-
   const goPokedex = () => {
     history.push("/pokedex")
   }
@@ -60,7 +55,6 @@ export const Header = () => {
   const goPokemonList = () => {
     history.push("/")
   }
-  console.log(pokemonItem)
   return location.pathname.includes("detail") && !location.pathname.includes("more")?
     <GeneralContainer>
       <Button onClick={() => history.goBack()}> voltar </Button>
