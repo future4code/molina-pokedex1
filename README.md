@@ -21,6 +21,8 @@ O que não funciona:
 
 ![image](https://user-images.githubusercontent.com/83218983/126050742-0dc9eac6-2752-4e56-8033-b64f062c154d.png)
 ![image](https://user-images.githubusercontent.com/83218983/126050752-c253ee0c-946b-48d9-8b4a-027f3714e31b.png)
+![image](https://user-images.githubusercontent.com/83218983/126200289-ad6dde34-63e9-4c94-bc0a-270a16ed15f8.png)
 ![image](https://user-images.githubusercontent.com/83218983/126050765-98b88518-90e5-44c5-9d23-12cb2c8db673.png)
-![Peek 17-07-2021 19-44](https://user-images.githubusercontent.com/83218983/126050896-d73f713c-db41-442a-a80e-d6286d02540f.gif)
+![Peek 19-07-2021 14-17](https://user-images.githubusercontent.com/83218983/126200602-2a2cb320-c3c0-4fc6-8cbf-e454303b874f.gif)
+
 
