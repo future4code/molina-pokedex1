@@ -51,7 +51,6 @@ const GlobalState = (props) => {
         const returnPokelist = [...pokemonDetailList, pokemon]
         setPokemonDetailList(returnPokelist.sort((a, b) => a.id - b.id))
     }
-    console.log(pokemonDetailList)
 
     const states = { pokemonDetailList, pokeDexItems }
     const setters = { setPokemonDetailList, SetPokedexItems }
